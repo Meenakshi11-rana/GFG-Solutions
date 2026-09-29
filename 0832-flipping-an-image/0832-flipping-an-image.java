@@ -1,7 +1,7 @@
 class Solution {
     public int[][] flipAndInvertImage(int[][] image) {
         int n=image[0].length;  //how many columns in a first row ==//image.length-no.of rows
-        for(int[]row:image){
+        for(int[] row:image){
             int low=0;
             int high=n-1;;
             while(low<=high){
