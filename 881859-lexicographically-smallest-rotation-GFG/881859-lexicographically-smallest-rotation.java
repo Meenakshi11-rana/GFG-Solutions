@@ -1,0 +1,47 @@
+class Solution {
+    public String lexiString(String s) {
+
+        int n = s.length();
+        String str = s + s;
+
+        int i = 0;
+        int j = 1;
+        int k = 0;
+
+        while (i < n && j < n && k < n) {
+
+            char a = str.charAt(i + k);
+            char b = str.charAt(j + k);
+
+            if (a == b) {
+                k++;
+            } 
+            else if (a > b) {
+                i = i + k + 1;
+
+                if (i <= j) {
+                    i = j + 1;
+                }
+
+                k = 0;
+            } 
+            else {
+                j = j + k + 1;
+
+                if (j <= i) {
+                    j = i + 1;
+                }
+
+                k = 0;
+            }
+        }
+
+        int start = Math.min(i, j);
+
+        return str.substring(start, start + n);
+    }
+}
+
+// Synced seamlessly with LeetHub Pro
+// Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
+// Get it here: https://chromewebstore.google.com/detail/bcilpkkbokcopmabingnndookdogmbna
