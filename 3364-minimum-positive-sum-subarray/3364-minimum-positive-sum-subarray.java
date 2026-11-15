@@ -11,7 +11,7 @@ class Solution {
                 int tes=pre[j]-m;
                 m+=nums.get(k++);
                 if(tes>0)
-                    res=Math.min(res,tes);
+                    res=Math.min(res,tes);                 
             }
         }
         return res==Integer.MAX_VALUE?-1:res;
